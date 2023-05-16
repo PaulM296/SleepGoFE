@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MaterialModule } from "./material.module";
-import { ContainerComponent } from './container/container.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
@@ -14,24 +13,34 @@ import { MapComponent } from './map/map.component';
 import { RegisterComponent } from './register/register.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { HomeComponent } from './home/home.component';
+import {RouterModule, RouterOutlet} from "@angular/router";
+
+const routes = [
+  {path: '', component: HomeComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContainerComponent,
     FooterComponent,
     HeaderComponent,
     LoginComponent,
     MapComponent,
     RegisterComponent,
     ReviewsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MaterialModule
+    MaterialModule,
+    RouterOutlet,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
