@@ -14,7 +14,9 @@ import { RegisterComponent } from './register/register.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomeComponent } from './home/home.component';
-import {RouterModule, RouterOutlet} from "@angular/router";
+import { RouterModule, RouterOutlet } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
+
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -41,6 +43,9 @@ const routes = [
     MaterialModule,
     RouterOutlet,
     RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
