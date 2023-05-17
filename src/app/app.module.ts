@@ -15,13 +15,13 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, RouterOutlet } from "@angular/router";
-import { ReactiveFormsModule } from "@angular/forms";
-
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
 
 const routes = [
   {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
@@ -42,7 +42,9 @@ const routes = [
     MatSlideToggleModule,
     MaterialModule,
     RouterOutlet,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     RouterModule

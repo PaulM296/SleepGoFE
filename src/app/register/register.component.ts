@@ -1,30 +1,54 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms'
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { ToastrService } from "ngx-toastr";
+import { ApiService } from "../services/ApiService";
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit{
 
-  constructor(private builder: FormBuilder) {
+  // constructor(private builder: FormBuilder, private toastr: ToastrService,
+  //             private service: ApiService, private router: Router ) {
+  // }
+
+  // registerForm!: FormGroup;
+  constructor(private formBuilder: FormBuilder, private service: ApiService, private router: Router,
+              private toastr: ToastrService) {
   }
 
-  registerForm = this.builder.group({
-    id: this.builder.control('',Validators.compose([Validators.required, Validators.minLength(5)])),
-    firstName: this.builder.control('', Validators.required),
-    lastName: this.builder.control('', Validators.required),
-    email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
-    phoneNumber: this.builder.control('', Validators.required),
-    username: this.builder.control('', Validators.required),
-    password: this.builder.control('', Validators.required),
-  })
-
-  proceedRegistration() {
-    if(this.registerForm.valid) {
-
-    } else {
-
-    }
+  ngOnInit(): void {
+    // this.registerForm = this.formBuilder.group({
+    //   firstName: ['', Validators.required],
+    //   lastName: ['', Validators.required],
+    //   email: ['', [Validators.required, Validators.email]],
+    //   phoneNumber: ['', Validators.required],
+    //   username: ['', Validators.required],
+    //   password: ['', [Validators.required, Validators.minLength(8)]],
+    // });
   }
+
+
+  registerForm  = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    phoneNumber: ['', Validators.required],
+    username: ['', Validators.required],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+  });
+
+  // proceedRegistration() {
+  //   if(this.registerForm.valid) {
+  //     this.service.ProceedRegister(this.registerForm.value).subscribe(res=> {
+  //       this.router.success('Please contact admin for access', 'Your account has been created');
+  //       this.router.navigate(['login']);
+  //     });
+  //   } else {
+  //     this.toastr.warning('Please enter valid data');
+  //   }
+  // }
 }

@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 0px auto;
+  width: 1020px;
+}
+
+.registration-heading {
+  font-weight: bold;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.button-container {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 15px
+}
+
+.home-button {
+  margin-left: 675px;
+}

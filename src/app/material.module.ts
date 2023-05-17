@@ -13,6 +13,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatIconModule } from "@angular/material/icon";
+import { ReactiveFormsModule } from "@angular/forms";
+import { ToastrModule } from "ngx-toastr";
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -29,7 +33,11 @@ import { MatIconModule } from "@angular/material/icon";
     MatFormFieldModule,
     MatChipsModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    ToastrModule,
+    MatInputModule,
+    FormsModule
   ],
   exports: [
     MatBadgeModule,
@@ -45,7 +53,11 @@ import { MatIconModule } from "@angular/material/icon";
     MatFormFieldModule,
     MatChipsModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    ToastrModule,
+    MatInputModule,
+    FormsModule
   ],
 })
 
