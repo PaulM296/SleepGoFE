@@ -17,11 +17,15 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, RouterOutlet } from "@angular/router";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
+import { HotelComponent } from './hotel/hotel.component';
+import { RoomComponent } from './room/room.component';
 
 const routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'hotel', component: HotelComponent},
+  {path: 'room', component: RoomComponent}
 ];
 
 @NgModule({
@@ -34,7 +38,9 @@ const routes = [
     RegisterComponent,
     ReviewsComponent,
     SearchBarComponent,
-    HomeComponent
+    HomeComponent,
+    HotelComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
