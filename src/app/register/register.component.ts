@@ -11,44 +11,40 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent implements OnInit{
 
-  // constructor(private builder: FormBuilder, private toastr: ToastrService,
-  //             private service: ApiService, private router: Router ) {
-  // }
+  registerForm!: FormGroup;
 
-  // registerForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder, private service: ApiService, private router: Router,
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
               private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
-    // this.registerForm = this.formBuilder.group({
-    //   firstName: ['', Validators.required],
-    //   lastName: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   phoneNumber: ['', Validators.required],
-    //   username: ['', Validators.required],
-    //   password: ['', [Validators.required, Validators.minLength(8)]],
-    // });
+    this.initializeForm();
   }
 
+  initializeForm(): void {
+    this.registerForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phoneNumber: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
-  registerForm  = this.formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    phoneNumber: ['', Validators.required],
-    username: ['', Validators.required],
-    password: ['', [Validators.required]],
-  });
-
-  // proceedRegistration() {
-  //   if(this.registerForm.valid) {
-  //     this.service.ProceedRegister(this.registerForm.value).subscribe(res=> {
-  //       this.router.success('Please contact admin for access', 'Your account has been created');
-  //       this.router.navigate(['login']);
-  //     });
-  //   } else {
-  //     this.toastr.warning('Please enter valid data');
-  //   }
-  // }
+  onSubmit(): void {
+    if (this.registerForm.valid) {
+      const user = this.registerForm.value;
+      this.apiService.registerUser(user).subscribe({
+        next: (response) => {
+          // Registration success, handle response if needed
+          console.log('Registration successful');
+        },
+        error: (error) => {
+          // Registration error, handle error if needed
+          console.error('Registration failed:', error);
+        }
+      });
+    }
+  }
 }

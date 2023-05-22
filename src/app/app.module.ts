@@ -12,13 +12,15 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { RegisterComponent } from './register/register.component';
 import { ReviewsComponent } from './reviews/reviews.component';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchBarComponent } from './header/search-bar/search-bar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, RouterOutlet } from "@angular/router";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomComponent } from './room/room.component';
+import { LogoutComponent } from './logout/logout.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -40,7 +42,9 @@ const routes = [
     SearchBarComponent,
     HomeComponent,
     HotelComponent,
-    RoomComponent
+    RoomComponent,
+    LogoutComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

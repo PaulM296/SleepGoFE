@@ -3,7 +3,7 @@
     <h1 class="registration-heading">User Registration</h1>
   </mat-card-header>
   <mat-card-content>
-    <form class="form-container" [formGroup]="registerForm">
+    <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="form-field">
         <mat-label>First Name</mat-label>
         <input matInput formControlName="firstName">
