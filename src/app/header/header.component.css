@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button {
+  width: 5%;
+  color: white;
+}
+
+mat-toolbar {
+  background-color: #54C4E0;
+}
+
+.mat-toolbar .toolbar-button {
+  background-color: white;
+}
+
+.all-button-container {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.button-container {
+  margin-left: 400%;
+}
+

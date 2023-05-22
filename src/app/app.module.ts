@@ -21,6 +21,7 @@ import { HotelComponent } from './hotel/hotel.component';
 import { RoomComponent } from './room/room.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -46,16 +47,17 @@ const routes = [
     LogoutComponent,
     SidenavComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSlideToggleModule,
-    MaterialModule,
-    RouterOutlet,
-    RouterModule.forRoot(routes),
-    HttpClientModule,
-    ToastrModule.forRoot()
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
+        MaterialModule,
+        RouterOutlet,
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        MatProgressSpinnerModule
+    ],
   exports: [
     RouterModule
   ],
