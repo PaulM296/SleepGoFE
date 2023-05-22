@@ -24,4 +24,17 @@ export class ApiService {
 
     return this.http.post(`${this.backendUrl}/api/register`, user, httpOptions);
   }
+
+  loginUser(username: string, password: string): Observable<any> {
+    const body = { username, password };
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1')
+      })
+    };
+
+    return this.http.post(`${this.backendUrl}/api/login`, body, httpOptions);
+  }
 }

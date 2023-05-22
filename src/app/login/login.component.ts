@@ -10,16 +10,37 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private service: ApiService, private router: Router,
+  loginForm!: FormGroup;
+  errorMessage!: string;
+
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
               private toastr: ToastrService) {
-    sessionStorage.clear();
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
   ngOnInit() {
   }
 
-  loginForm  = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: ['', [Validators.required]],
-  });
+  onSubmit(): void {
+    if (this.loginForm.valid) {
+      const username = this.loginForm.value.username;
+      const password = this.loginForm.value.password;
+
+      this.apiService.loginUser(username, password).subscribe({
+        next: (response) => {
+          // Handle successful login
+          console.log('Login successful:', response);
+          this.router.navigate(['']);
+        },
+        error: (error) => {
+          // Handle login error
+          console.error('Login failed:', error);
+          this.errorMessage = 'Login failed. Please try again.';
+        }
+      });
+    }
+  }
 }
