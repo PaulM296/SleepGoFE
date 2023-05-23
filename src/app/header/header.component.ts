@@ -17,34 +17,34 @@ export class HeaderComponent implements OnInit{
   }
 
   logout(): void {
-    const username = localStorage.getItem('username') as string; // Replace with the actual username
-    const token = localStorage.getItem('token') as string; // Replace with the actual token
+    const username = localStorage.getItem('username') as string;
+    const token = localStorage.getItem('token') as string;
 
     this.apiService.logoutUser(username, token).subscribe({
       next: () => {
-        // Handle successful logout
-        // For example, navigate to the home page or display a success message
-        console.log('Logout successful');
-        // Navigate to the home page
-        // Assuming you have a Router instance injected in your component's constructor
 
+        console.log('Logout successful');
         localStorage.removeItem('username');
         localStorage.removeItem('token');
 
         this.router.navigate(['']);
       },
       error: (error) => {
-        // Handle logout error
-        // For example, display an error message
         console.error('Logout error:', error);
-        // Display an error message to the user
         this.errorMessage = 'An error occurred during logout. Please try again.';
       },
       complete: () => {
-        console.log('Logout complete'); // Add this line to check if the complete callback is triggered
+        console.log('Logout complete');
       }
     });
   }
 
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
+  }
+
+  isHomePage(): boolean {
+    return this.router.url === '/';
+  }
 
 }
