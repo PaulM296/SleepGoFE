@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { ToastrService } from "ngx-toastr";
 import { ApiService } from "../services/ApiService";
 import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -33,6 +34,10 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           // Handle successful login
           console.log('Login successful:', response);
+
+          localStorage.setItem('username', username);
+          localStorage.setItem('token', response.token);
+
           this.router.navigate(['']);
         },
         error: (error) => {

@@ -20,7 +20,6 @@ import {ToastrModule} from "ngx-toastr";
 import { HotelComponent } from './hotel/hotel.component';
 import { RoomComponent } from './room/room.component';
 import { LogoutComponent } from './logout/logout.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 const routes = [
@@ -44,8 +43,7 @@ const routes = [
     HomeComponent,
     HotelComponent,
     RoomComponent,
-    LogoutComponent,
-    SidenavComponent
+    LogoutComponent
   ],
     imports: [
         BrowserModule,
