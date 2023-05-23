@@ -8,12 +8,18 @@
       </div>
       <span>Welcome to Sleep&Go</span>
       <img src="assets/images/Logo3_resized.png">
-        <div class="spacer"></div>
+      <div class="spacer"></div>
       <div class="all-button-container">
         <a mat-stroked-button color="primary" routerLink="" class="toolbar-button" *ngIf="!isHomePage()">
           <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
           Home
         </a>
+        <div class="search-bar-container">
+          <mat-form-field  class="search-bar">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput type="text" placeholder="Search">
+          </mat-form-field>
+        </div>
         <div class="button-container">
           <a mat-stroked-button color="primary" routerLink="/login" class="toolbar-button" *ngIf="!isLoggedIn()">Login</a>
           <a mat-stroked-button color="primary" routerLink="/register" class="toolbar-button" *ngIf="!isLoggedIn()">Register</a>
