@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
   loginForm!: FormGroup;
   errorMessage!: string;
 
@@ -47,5 +48,8 @@ export class LoginComponent implements OnInit {
         }
       });
     }
+  }
+  togglePasswordVisibility(): void {
+    this.hide = !this.hide;
   }
 }

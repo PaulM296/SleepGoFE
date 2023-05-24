@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent implements OnInit{
 
+  hide= true;
   registerForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
@@ -46,5 +47,8 @@ export class RegisterComponent implements OnInit{
         }
       });
     }
+  }
+  togglePasswordVisibility() {
+    this.hide = !this.hide;
   }
 }
