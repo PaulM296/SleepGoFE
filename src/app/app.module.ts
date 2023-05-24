@@ -22,6 +22,7 @@ import { RoomComponent } from './room/room.component';
 import { LogoutComponent } from './logout/logout.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatListModule} from "@angular/material/list";
+import { UserAccountComponent } from './user-account/user-account.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -44,7 +45,8 @@ const routes = [
     HomeComponent,
     HotelComponent,
     RoomComponent,
-    LogoutComponent
+    LogoutComponent,
+    UserAccountComponent
   ],
     imports: [
         BrowserModule,
