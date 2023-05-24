@@ -21,6 +21,7 @@ import { HotelComponent } from './hotel/hotel.component';
 import { RoomComponent } from './room/room.component';
 import { LogoutComponent } from './logout/logout.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatListModule} from "@angular/material/list";
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -54,7 +55,8 @@ const routes = [
         RouterModule.forRoot(routes),
         HttpClientModule,
         ToastrModule.forRoot(),
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatListModule
     ],
   exports: [
     RouterModule

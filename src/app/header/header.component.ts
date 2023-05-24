@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from "@angular/router";
 import {ApiService} from "../services/ApiService";
+import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,10 @@ import {ApiService} from "../services/ApiService";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
-  private errorMessage!: string;
 
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+
+  private errorMessage!: string;
   constructor(private router: Router, private apiService: ApiService) {
   }
 
@@ -45,6 +48,12 @@ export class HeaderComponent implements OnInit{
 
   isHomePage(): boolean {
     return this.router.url === '/';
+  }
+
+  toggleSideNav() {
+    if (this.sidenav) {
+      this.sidenav.toggle();
+    }
   }
 
 }

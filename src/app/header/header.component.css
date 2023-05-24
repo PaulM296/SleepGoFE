@@ -89,3 +89,24 @@ mat-toolbar {
   background-color: white;
   margin-top: 30px;
 }
+
+mat-sidenav-container {
+  height: 93.35vh;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+.mat-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.aligned-with-icon{
+  position: absolute;
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+
