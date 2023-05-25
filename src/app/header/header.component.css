@@ -49,7 +49,7 @@
 
 .menu-button {
   width: 5%;
-  color: white;
+  color: #3F51B5;
 }
 
 mat-toolbar {
@@ -57,7 +57,7 @@ mat-toolbar {
 }
 
 .mat-toolbar .toolbar-button {
-  background-color: white;
+  background-color: #3F51B5;
 }
 
 .all-button-container {

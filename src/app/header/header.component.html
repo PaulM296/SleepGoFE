@@ -22,9 +22,9 @@
           </mat-form-field>
         </div>
         <div class="button-container">
-          <a mat-stroked-button color="primary" routerLink="/login" class="toolbar-button" *ngIf="!isLoggedIn()">Login</a>
-          <a mat-stroked-button color="primary" routerLink="/register" class="toolbar-button" *ngIf="!isLoggedIn()">Register</a>
-          <a mat-stroked-button color="primary" (click)="logout()" class="toolbar-button" *ngIf="isLoggedIn()">Logout</a>
+          <a mat-raised-button color="primary" routerLink="/register" class="toolbar-button" *ngIf="!isLoggedIn()">Register</a>
+          <a mat-raised-button color="primary" routerLink="/login" class="toolbar-button" *ngIf="!isLoggedIn()">Sign In</a>
+          <a mat-raised-button color="primary" (click)="logout()" class="toolbar-button" *ngIf="isLoggedIn()">Sign Out</a>
         </div>
       </div>
         </mat-toolbar-row>
@@ -35,7 +35,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item>
+      <a mat-list-item routerLink="/user-account" *ngIf="isLoggedIn()">
         <mat-icon>account_circle</mat-icon>
         <span class="aligned-with-icon">Account</span>
       </a>
@@ -43,15 +43,13 @@
         <mat-icon>hotel</mat-icon>
         <span class="aligned-with-icon">Hotel</span>
       </a>
-      <a mat-list-item *ngIf="!isLoggedIn()">
+      <a mat-list-item *ngIf="isLoggedIn()">
         <mat-icon>account_circle</mat-icon>
-        <span class="aligned-with-icon">View </span>
+        <span class="aligned-with-icon">View</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div style="height: 70vh">
       <app-footer></app-footer>
-    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
