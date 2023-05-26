@@ -29,7 +29,8 @@ const routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'hotel', component: HotelComponent},
-  {path: 'room', component: RoomComponent}
+  {path: 'room', component: RoomComponent},
+  {path: 'user-account', component: UserAccountComponent}
 ];
 
 @NgModule({

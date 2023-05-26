@@ -7,14 +7,12 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <span>Welcome to Sleep&Go</span>
-      <img src="assets/images/Logo3_resized.png">
+          <span class="welcome-link-container">
+            <a mat-button routerLink="" class="welcome-link">Welcome to Sleep&Go</a>
+          </span>
+          <img src="assets/images/Logo3_resized.png">
       <div class="spacer"></div>
       <div class="all-button-container">
-        <a mat-stroked-button color="primary" routerLink="" class="toolbar-button" *ngIf="!isHomePage()">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-          Home
-        </a>
         <div class="search-bar-container">
           <mat-form-field  class="search-bar">
             <mat-icon matPrefix>search</mat-icon>
@@ -23,8 +21,14 @@
         </div>
         <div class="button-container">
           <a mat-raised-button color="primary" routerLink="/register" class="toolbar-button" *ngIf="!isLoggedIn()">Register</a>
-          <a mat-raised-button color="primary" routerLink="/login" class="toolbar-button" *ngIf="!isLoggedIn()">Sign In</a>
-          <a mat-raised-button color="primary" (click)="logout()" class="toolbar-button" *ngIf="isLoggedIn()">Sign Out</a>
+          <a mat-raised-button color="primary" routerLink="/login" class="toolbar-button" *ngIf="!isLoggedIn()">
+            <mat-icon>input</mat-icon>
+            Sign In
+          </a>
+          <a mat-raised-button color="primary" (click)="logout()" class="toolbar-button" *ngIf="isLoggedIn()">
+            <i class="material-icons">logout</i>
+            Sign Out
+          </a>
         </div>
       </div>
         </mat-toolbar-row>
@@ -35,17 +39,21 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
     <mat-nav-list>
+      <a mat-list-item routerLink="">
+        <mat-icon>home</mat-icon>
+        <span class="aligned-with-icon">Home</span>
+      </a>
       <a mat-list-item routerLink="/user-account" *ngIf="isLoggedIn()">
         <mat-icon>account_circle</mat-icon>
-        <span class="aligned-with-icon">Account</span>
+        <span class="aligned-with-icon">Profile</span>
       </a>
       <a mat-list-item routerLink="/hotel">
         <mat-icon>hotel</mat-icon>
-        <span class="aligned-with-icon">Hotel</span>
+        <span class="aligned-with-icon">Hotels</span>
       </a>
       <a mat-list-item *ngIf="isLoggedIn()">
-        <mat-icon>account_circle</mat-icon>
-        <span class="aligned-with-icon">View</span>
+        <mat-icon>payment</mat-icon>
+        <span class="aligned-with-icon">Payment</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
