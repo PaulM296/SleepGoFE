@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ToastrModule } from "ngx-toastr";
 import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     ToastrModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   exports: [
     MatBadgeModule,
@@ -57,7 +59,8 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     ToastrModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
 })
 
