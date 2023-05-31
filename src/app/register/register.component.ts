@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { ToastrService } from "ngx-toastr";
 import { ApiService } from "../services/ApiService";
 import { Router } from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit{
   registerForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
-              private toastr: ToastrService) {
+              private toastr: ToastrService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -38,12 +39,12 @@ export class RegisterComponent implements OnInit{
       const user = this.registerForm.value;
       this.apiService.registerUser(user).subscribe({
         next: (response) => {
-          // Registration success, handle response if needed
           console.log('Registration successful');
+          this.snackBar.open('Registration successful', 'Close', { duration: 3000 });
         },
         error: (error) => {
-          // Registration error, handle error if needed
-          console.error('Registration failed:', error);
+          console.error('Registration failed', error);
+          this.snackBar.open('Registration failed', 'Close', { duration: 3000 });
         }
       });
     }

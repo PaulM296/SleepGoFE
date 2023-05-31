@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import { ToastrService } from "ngx-toastr";
 import { ApiService } from "../services/ApiService";
 import { Router } from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   errorMessage!: string;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
-              private toastr: ToastrService) {
+              private toastr: ToastrService, private snackBar: MatSnackBar) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -33,17 +34,15 @@ export class LoginComponent implements OnInit {
 
       this.apiService.loginUser(username, password).subscribe({
         next: (response) => {
-          // Handle successful login
           console.log('Login successful:', response);
-
+          this.snackBar.open('Login successful', 'Close', { duration: 3000 });
           localStorage.setItem('username', username);
           localStorage.setItem('token', response.token);
-
           this.router.navigate(['']);
         },
         error: (error) => {
-          // Handle login error
           console.error('Login failed:', error);
+          this.snackBar.open('Login failed', 'Close', { duration: 3000 });
           this.errorMessage = 'Login failed. Please try again.';
         }
       });

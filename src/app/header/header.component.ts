@@ -2,6 +2,7 @@
   import {Router} from "@angular/router";
   import {ApiService} from "../services/ApiService";
   import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
+  import {MatSnackBar} from "@angular/material/snack-bar";
 
   @Component({
     selector: 'app-header',
@@ -13,7 +14,7 @@
     @ViewChild('sidenav') sidenav!: MatSidenav;
 
     private errorMessage!: string;
-    constructor(private router: Router, private apiService: ApiService) {
+    constructor(private router: Router, private apiService: ApiService, private snackBar: MatSnackBar) {
     }
 
     ngOnInit() {
@@ -29,12 +30,12 @@
           console.log('Logout successful');
           localStorage.removeItem('username');
           localStorage.removeItem('token');
-
+          this.snackBar.open('Logout successful', 'Close', { duration: 3000 });
           this.router.navigate(['']);
         },
         error: (error) => {
           console.error('Logout error:', error);
-          this.errorMessage = 'An error occurred during logout. Please try again.';
+          this.snackBar.open('There was a problem with the logout', 'Close', { duration: 3000 });
         },
         complete: () => {
           console.log('Logout complete');
