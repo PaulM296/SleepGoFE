@@ -60,7 +60,6 @@ export class ApiService {
   }
 
   getUserByUsername(username: string, token: string): Observable<any> {
-    // const headers = new HttpHeaders().set('custom-token', token);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -74,7 +73,6 @@ export class ApiService {
     return this.http.get(`${this.backendUrl}/api/user-account/${username}`, httpOptions);
   }
   updateUser(username: string, token: string, updatedUser: any): Observable<any> {
-    // const headers = new HttpHeaders().set('custom-token', token);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -86,6 +84,17 @@ export class ApiService {
       }
     };
     return this.http.put(`${this.backendUrl}/api/user-account/${username}`, updatedUser, httpOptions);
+  }
+
+  deleteUser(username: string, token: string) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+        'custom-token': token
+      }),
+    };
+    return this.http.delete(`${this.backendUrl}/api/user-account/${username}`,  httpOptions);
   }
 
 }

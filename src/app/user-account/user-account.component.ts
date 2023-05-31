@@ -75,4 +75,23 @@ export class UserAccountComponent implements OnInit {
       });
   }
 
+  deleteAccount() {
+    if (this.username && this.token) {
+      this.apiService.deleteUser(this.username, this.token).subscribe({
+        next: () => {
+          console.log('Account deleted successfully');
+          this.snackBar.open('Profile deleted successfully', 'Close', { duration: 3000 });
+          localStorage.removeItem('username');
+          localStorage.removeItem('token');
+          this.router.navigate(['']);
+        },
+        error: (error) => {
+          console.log('The attempt failed');
+          this.snackBar.open('Failed to delete profile', 'Close', { duration: 3000 });
+          console.log(error);
+        }
+      });
+    }
+  }
+
 }
