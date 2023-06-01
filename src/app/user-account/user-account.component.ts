@@ -16,6 +16,7 @@ export class UserAccountComponent implements OnInit {
   profileForm!: FormGroup;
   username!: string;
   token!: string;
+  url: string | undefined;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute, private snackBar: MatSnackBar) {
     this.profileForm = this.formBuilder.group({
@@ -46,7 +47,6 @@ export class UserAccountComponent implements OnInit {
           console.log("Fetched successfully");
         },
         error: (error: any) => {
-          // Handle error
           console.log("Fetch Error");
           console.error(error);
         }
@@ -91,6 +91,18 @@ export class UserAccountComponent implements OnInit {
           console.log(error);
         }
       });
+    }
+  }
+
+  onFileSelected(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]);
+
+      reader.onload = (event) => {
+        this.url = event.target?.result?.toString();
+      }
     }
   }
 

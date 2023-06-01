@@ -23,6 +23,8 @@ import { LogoutComponent } from './logout/logout.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatListModule} from "@angular/material/list";
 import { UserAccountComponent } from './user-account/user-account.component';
+import {NgOptimizedImage} from "@angular/common";
+import {CdkListbox} from "@angular/cdk/listbox";
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -49,18 +51,20 @@ const routes = [
     LogoutComponent,
     UserAccountComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatSlideToggleModule,
-        MaterialModule,
-        RouterOutlet,
-        RouterModule.forRoot(routes),
-        HttpClientModule,
-        ToastrModule.forRoot(),
-        MatProgressSpinnerModule,
-        MatListModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MaterialModule,
+    RouterOutlet,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    MatProgressSpinnerModule,
+    MatListModule,
+    NgOptimizedImage,
+    CdkListbox
+  ],
   exports: [
     RouterModule
   ],

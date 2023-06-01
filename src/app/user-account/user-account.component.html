@@ -2,11 +2,13 @@
 <mat-card class="wrapper">
   <mat-card-header>
     <h1>Account settings</h1>
-    <div mat-card-avatar>
-      <img src="assets/images/user.png" class="header-image">
+    <div mat-card-avatar class="avatar-container">
+      <img [src]="url || 'assets/images/user.png'" class="header-image">
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" class="file-input">
+<!--      <label class="file-label">Choose File</label>-->
     </div>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="content-container">
     <form class="form-container" [formGroup]="profileForm">
       <mat-form-field class="form-field">
         <mat-label>First Name</mat-label>
@@ -31,4 +33,3 @@
     </form>
   </mat-card-content>
 </mat-card>
-
