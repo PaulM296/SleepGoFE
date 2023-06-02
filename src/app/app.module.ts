@@ -12,7 +12,6 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { RegisterComponent } from './register/register.component';
 import { ReviewsComponent } from './reviews/reviews.component';
-import { SearchBarComponent } from './header/search-bar/search-bar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, RouterOutlet } from "@angular/router";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
@@ -44,7 +43,6 @@ const routes = [
     MapComponent,
     RegisterComponent,
     ReviewsComponent,
-    SearchBarComponent,
     HomeComponent,
     HotelComponent,
     RoomComponent,
