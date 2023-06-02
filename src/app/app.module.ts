@@ -27,6 +27,7 @@ import {CdkListbox} from "@angular/cdk/listbox";
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -34,8 +35,9 @@ const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
-  {path: 'user-account', component: UserAccountComponent}
-  // {path: 'sidenav', component: SidenavComponent}
+  {path: 'user-account', component: UserAccountComponent},
+  {path: 'reviews', component: ReviewsComponent},
+  {path: 'reservations', component: ReservationsComponent}
 ];
 
 @NgModule({
@@ -53,7 +55,8 @@ const routes = [
     LogoutComponent,
     UserAccountComponent,
     ConfirmationDialogComponent,
-    SidenavComponent
+    SidenavComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,
