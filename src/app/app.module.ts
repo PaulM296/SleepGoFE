@@ -24,6 +24,7 @@ import {MatListModule} from "@angular/material/list";
 import { UserAccountComponent } from './user-account/user-account.component';
 import {NgOptimizedImage} from "@angular/common";
 import {CdkListbox} from "@angular/cdk/listbox";
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -47,7 +48,8 @@ const routes = [
     HotelComponent,
     RoomComponent,
     LogoutComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,

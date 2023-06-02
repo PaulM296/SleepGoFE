@@ -5,6 +5,8 @@ import {ApiService} from "../services/ApiService";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-user-account',
@@ -18,7 +20,8 @@ export class UserAccountComponent implements OnInit {
   token!: string;
   url: string | undefined;
 
-  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router, private activatedRoute: ActivatedRoute, private snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
+              private activatedRoute: ActivatedRoute, private snackBar: MatSnackBar, private dialog: MatDialog) {
     this.profileForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -104,6 +107,19 @@ export class UserAccountComponent implements OnInit {
         this.url = event.target?.result?.toString();
       }
     }
+  }
+
+  openConfirmationDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '250px',
+      data: 'Are you sure you want to delete your account? This action is permanent.',
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      if (result) {
+        this.deleteAccount();
+      }
+    });
   }
 
 }
