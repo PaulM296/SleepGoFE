@@ -10,7 +10,9 @@
 }
 
 mat-toolbar {
+  position: sticky;
   background-color: #54C4E0;
+  z-index: 100;
 }
 
 .mat-toolbar .toolbar-button {
@@ -43,8 +45,9 @@ mat-toolbar {
 .search-bar {
   width: 70%;
   height: 100%;
-  background-color: white;
-  margin-top: 30px;
+  /*background-color: white;*/
+  margin-top: 20px;
+  border-radius: 30px;
 }
 
 mat-sidenav-container {

@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <div class="logo">
+    <h1>Sleep&Go</h1>
+  </div>
+  <mat-divider></mat-divider>
+  <a mat-list-item routerLink="">
+    <mat-icon>home</mat-icon>
+    <span class="aligned-with-icon">Home</span>
+  </a>
+  <a mat-list-item routerLink="/user-account" *ngIf="isLoggedIn()">
+    <mat-icon>account_circle</mat-icon>
+    <span class="aligned-with-icon">Profile</span>
+  </a>
+  <a mat-list-item routerLink="/hotel">
+    <mat-icon>hotel</mat-icon>
+    <span class="aligned-with-icon">Hotels</span>
+  </a>
+  <a mat-list-item>
+    <mat-icon>payment</mat-icon>
+    <span class="aligned-with-icon">Payment</span>
+  </a>
+</mat-nav-list>

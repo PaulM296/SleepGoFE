@@ -25,6 +25,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
 import {NgOptimizedImage} from "@angular/common";
 import {CdkListbox} from "@angular/cdk/listbox";
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -33,6 +35,7 @@ const routes = [
   {path: 'hotel', component: HotelComponent},
   {path: 'room', component: RoomComponent},
   {path: 'user-account', component: UserAccountComponent}
+  // {path: 'sidenav', component: SidenavComponent}
 ];
 
 @NgModule({
@@ -49,7 +52,8 @@ const routes = [
     RoomComponent,
     LogoutComponent,
     UserAccountComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,8 @@ const routes = [
     MatProgressSpinnerModule,
     MatListModule,
     NgOptimizedImage,
-    CdkListbox
+    CdkListbox,
+    FlexLayoutModule
   ],
   exports: [
     RouterModule
