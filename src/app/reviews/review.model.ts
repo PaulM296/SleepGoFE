@@ -1,5 +1,6 @@
 export interface ReviewModel {
-  // hotelName: string;
+  hotelId: number;
+  hotelName: string;
   reviewText: string;
 }
 

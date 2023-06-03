@@ -122,5 +122,15 @@ export class ApiService {
 
     return this.http.get(`${this.backendUrl}/api/reviews/${reviewId}`, httpOptions);
   }
+  getHotelById(hotelId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+      }),
+    };
+
+    return this.http.get(`${this.backendUrl}/api/hotel/${hotelId}`, httpOptions);
+  }
 
 }

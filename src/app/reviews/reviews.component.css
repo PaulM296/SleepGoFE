@@ -13,3 +13,10 @@
 .form-field {
   width: 100%;
 }
+
+.review-separator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
