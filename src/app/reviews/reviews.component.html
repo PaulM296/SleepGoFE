@@ -1,1 +1,18 @@
-<p>reviews works!</p>
+<mat-card class="wrapper">
+  <mat-card-header>
+    <h1>Account settings</h1>
+  </mat-card-header>
+  <mat-card-content class="content-container">
+    <form class="form-container" [formGroup]="reviewForm">
+<!--      <mat-form-field class="form-field">-->
+<!--        <mat-label>Hotel Name</mat-label>-->
+<!--        <input matInput formControlName="hotelName">-->
+<!--      </mat-form-field>-->
+      <mat-form-field class="form-field">
+        <mat-label>Review Text</mat-label>
+        <input matInput formControlName="reviewText">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+

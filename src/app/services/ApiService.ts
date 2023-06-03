@@ -97,4 +97,30 @@ export class ApiService {
     return this.http.delete(`${this.backendUrl}/api/user-account/${username}`,  httpOptions);
   }
 
+  getReviewsByUsername(username: string, token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+        'custom-token': token
+      }),
+      params: {
+        'username': username
+      }
+    };
+
+    return this.http.get(`${this.backendUrl}/api/reviews/${username}`, httpOptions);
+  }
+
+  getReviewsById(reviewId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+      }),
+    };
+
+    return this.http.get(`${this.backendUrl}/api/reviews/${reviewId}`, httpOptions);
+  }
+
 }

@@ -19,12 +19,12 @@
     <mat-icon>payment</mat-icon>
     <span class="aligned-with-icon">Payment</span>
   </a>
-  <a mat-list-item routerLink="/reviews">
+  <a mat-list-item routerLink="/reviews" *ngIf="isLoggedIn()">
   <mat-icon> rate_review</mat-icon>
-    <span class="aligned-with-icon">Reviews</span>
+    <span class="aligned-with-icon">My Reviews</span>
   </a>
-  <a mat-list-item routerLink="/reservations">
+  <a mat-list-item routerLink="/reservations" *ngIf="isLoggedIn()">
     <mat-icon>business_center</mat-icon>
-    <span class="aligned-with-icon">Reservations</span>
+    <span class="aligned-with-icon">My Reservations</span>
   </a>
 </mat-nav-list>
