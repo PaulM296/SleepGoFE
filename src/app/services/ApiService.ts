@@ -133,4 +133,19 @@ export class ApiService {
     return this.http.get(`${this.backendUrl}/api/hotel/${hotelId}`, httpOptions);
   }
 
+  getReservationsByUsername(username: string, token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+        'custom-token': token
+      }),
+      params: {
+        'username': username
+      }
+    };
+
+    return this.http.get(`${this.backendUrl}/api/reservations/${username}`, httpOptions);
+  }
+
 }

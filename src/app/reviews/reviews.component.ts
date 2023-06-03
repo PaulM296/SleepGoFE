@@ -28,51 +28,6 @@ export class ReviewsComponent implements OnInit{
     this.fetchReviews();
   }
 
-  // fetchReviews() {
-  //   this.apiService.getReviewsByUsername(this.username, this.token)
-  //     .subscribe({
-  //       next: (reviews: ReviewModel[]) => {
-  //         if (reviews.length > 0) {
-  //           const firstReview = reviews[0];
-  //           this.reviewForm.patchValue({
-  //             reviewText: firstReview.reviewText
-  //           });
-  //         }
-  //         console.log("Fetched successfully");
-  //       },
-  //       error: (error: any) => {
-  //         console.log("Fetch Error");
-  //         console.error(error);
-  //       }
-  //     });
-  // }
-
-  // fetchReviews() {
-  //   this.apiService.getReviewsByUsername(this.username, this.token).subscribe({
-  //     next: (reviews: ReviewModel[]) => {
-  //       if (reviews.length > 0) {
-  //         this.reviews = reviews;
-  //
-  //         for (const review of this.reviews) {
-  //           this.apiService.getHotelById(review.hotelId).subscribe({
-  //             next: (hotel: any) => {
-  //               review.hotelName = hotel.hotelName;
-  //             },
-  //             error: (error: any) => {
-  //               console.error(error);
-  //             }
-  //           });
-  //         }
-  //       }
-  //       console.log('Fetched successfully');
-  //     },
-  //     error: (error: any) => {
-  //       console.log('Fetch Error');
-  //       console.error(error);
-  //     }
-  //   });
-  // }
-
   fetchReviews() {
     this.apiService.getReviewsByUsername(this.username, this.token).subscribe({
       next: (reviews: ReviewModel[]) => {
