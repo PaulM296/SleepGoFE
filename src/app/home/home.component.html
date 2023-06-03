@@ -1,6 +1,29 @@
 <div class="home-containter">
   <div class="wrapper">
-    
+    <div class="spacer"></div>
+    <h1>Welcome to Sleep&Go</h1>
+    <div class="best-price-guarantee">
+      <h2 class="section-title">Best Price Guarantee</h2>
+      <p class="section-description">We Guarantee the Best Rates</p>
+      <p class="price-guarantee-text">If you find a lower rate elsewhere, we'll match it!</p>
+    </div>
+    <div class="convenient-location">
+      <h2 class="section-title">Convenient Location</h2>
+      <p class="section-description">Ideal Location for Business and Leisure</p>
+      <p class="location-details">Emphasizing proximity to major attractions, transportation hubs, and business districts.</p>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

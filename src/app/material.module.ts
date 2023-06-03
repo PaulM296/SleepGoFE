@@ -19,6 +19,7 @@ import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatNativeDateModule } from "@angular/material/core";
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatInputModule,
     FormsModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule
   ],
   exports: [
     MatBadgeModule,
@@ -63,7 +65,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatInputModule,
     FormsModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule
   ],
 })
 
