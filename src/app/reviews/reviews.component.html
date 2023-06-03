@@ -1,12 +1,12 @@
 <mat-card class="wrapper">
   <mat-card-header>
-    <h1>Account settings</h1>
+    <h1>Review History</h1>
   </mat-card-header>
   <mat-card-content class="content-container">
     <form class="form-container" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
       <div *ngFor="let review of reviews" class="review">
-        <p>Hotel Name: {{ review.hotelName }}</p>
-        <p>Review Text: {{ review.reviewText }}</p>
+        <p><b>Hotel Name</b>: {{ review.hotelName }}</p>
+        <p><b>Review Text</b>: {{ review.reviewText }}</p>
         <hr class="review-separator">
       </div>
       <a mat-raised-button color="primary" routerLink="">
