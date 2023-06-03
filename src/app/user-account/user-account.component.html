@@ -1,38 +1,40 @@
-<mat-card class="wrapper">
-  <mat-card-header>
-    <h1>Account settings</h1>
-    <div mat-card-avatar class="avatar-container">
-      <img [src]="url || 'assets/images/user.png'" class="header-image">
-      <input type="file" accept="image/*" (change)="onFileSelected($event)" class="file-input">
-    </div>
-  </mat-card-header>
-  <mat-card-content class="content-container">
-    <form class="form-container" [formGroup]="profileForm">
-      <mat-form-field class="form-field">
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstName">
-      </mat-form-field>
-      <mat-form-field class="form-field">
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastName">
-      </mat-form-field>
-      <mat-form-field class="form-field">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-      <mat-form-field class="form-field">
-        <mat-label>Phone number</mat-label>
-        <input matInput formControlName="phoneNumber">
-      </mat-form-field>
-      <div class="button-container">
-        <a mat-raised-button color="primary" (click)="onFormSubmit()" class="save-button">Save
-          <mat-icon>edit</mat-icon>
-        </a>
-        <a mat-raised-button color="warn" (click)="openConfirmationDialog()" class="delete-button">Delete Account
-          <mat-icon>delete_forever</mat-icon>
-        </a>
+<div class="user-profile-container">
+  <mat-card class="wrapper">
+    <mat-card-header>
+      <h1>Account settings</h1>
+      <div mat-card-avatar class="avatar-container">
+        <img [src]="url || 'assets/images/user.png'" class="header-image">
+        <input type="file" accept="image/*" (change)="onFileSelected($event)" class="file-input">
       </div>
-    </form>
-  </mat-card-content>
-</mat-card>
-
+    </mat-card-header>
+    <mat-card-content class="content-container">
+      <form class="form-container" [formGroup]="profileForm">
+        <mat-form-field class="form-field">
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <mat-label>Phone number</mat-label>
+          <input matInput formControlName="phoneNumber">
+        </mat-form-field>
+        <div class="button-container">
+          <a mat-raised-button color="primary" (click)="onFormSubmit()" class="save-button">Save
+            <mat-icon>edit</mat-icon>
+          </a>
+          <a mat-raised-button color="warn" (click)="openConfirmationDialog()" class="delete-button">Delete Account
+            <mat-icon>delete_forever</mat-icon>
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <app-footer></app-footer>
+</div>

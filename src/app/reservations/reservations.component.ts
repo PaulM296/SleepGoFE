@@ -36,16 +36,16 @@ export class ReservationsComponent implements OnInit {
         if (reservations.length > 0) {
           this.reservations = reservations;
 
-          for (const reservation of this.reservations) {
-            this.apiService.getHotelById(reservation.hotelId).subscribe({
-              next: (hotel: any) => {
-                reservation.hotelName = hotel.hotelName;
-              },
-              error: (error: any) => {
-                console.error(error);
-              }
-            });
-          }
+          // for (const reservation of this.reservations) {
+          //   this.apiService.getHotelById(reservation.hotelId).subscribe({
+          //     next: (hotel: any) => {
+          //       reservation.hotelName = hotel.hotelName;
+          //     },
+          //     error: (error: any) => {
+          //       console.error(error);
+          //     }
+          //   });
+          // }
         }
         console.log('Fetched successfully');
       },
