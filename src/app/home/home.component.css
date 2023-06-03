@@ -1,5 +1,13 @@
 .wrapper {
   margin: 0px auto;
   width: 1020px;
+  position: relative;
 }
 
+.home-containter {
+  width: 100%;
+  height: 90%;
+  background-image: url('src/assets/images/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
