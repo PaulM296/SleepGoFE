@@ -29,6 +29,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { SearchBarComponent } from "./search-bar/search-bar.component";
+import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -38,7 +39,8 @@ const routes = [
   {path: 'room', component: RoomComponent},
   {path: 'user-account', component: UserAccountComponent},
   {path: 'reviews', component: ReviewsComponent},
-  {path: 'reservations', component: ReservationsComponent}
+  {path: 'reservations', component: ReservationsComponent},
+  {path: 'hotel/:id', component: HotelDetailsComponent}
 ];
 
 @NgModule({
@@ -58,7 +60,8 @@ const routes = [
     ConfirmationDialogComponent,
     SidenavComponent,
     ReservationsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HotelDetailsComponent
   ],
   imports: [
     BrowserModule,

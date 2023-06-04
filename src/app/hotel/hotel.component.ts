@@ -3,6 +3,7 @@ import {ApiService} from "../services/ApiService";
 import {FormControl, FormGroup} from "@angular/forms";
 import {F} from "@angular/cdk/keycodes";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class HotelComponent implements OnInit {
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
   })
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private router: Router) {
 
   }
 
@@ -45,6 +46,10 @@ export class HotelComponent implements OnInit {
 
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
+  }
+
+  navigateToHotelPage(hotelId: number) {
+    this.router.navigate(['/hotel', hotelId]);
   }
 
 }

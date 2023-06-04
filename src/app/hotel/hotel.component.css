@@ -24,3 +24,7 @@ span {
 .search-bar-wrapper {
   margin-left: auto;
 }
+
+.hand-cursor {
+  cursor: pointer;
+}
