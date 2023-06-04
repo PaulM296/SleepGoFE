@@ -23,7 +23,7 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1;
+  flex: 0.25;
 }
 
 .button-container {
@@ -31,42 +31,11 @@ mat-toolbar {
 }
 
 .spacer {
-  flex: 0.25;
-}
-
-
-.search-bar-container {
-  flex: 0.7;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.search-bar {
-  width: 70%;
-  height: 100%;
-  /*background-color: white;*/
-  margin-top: 20px;
-  border-radius: 30px;
+  flex: 1;
 }
 
 mat-sidenav-container {
   height: 93.35vh;
-}
-
-mat-sidenav {
-  width: 200px;
-}
-
-.mat-list-item {
-  display: flex;
-  align-items: center;
-}
-
-.aligned-with-icon{
-  position: absolute;
-  margin-top: 2px;
-  margin-left: 10px;
 }
 
 .welcome-link {

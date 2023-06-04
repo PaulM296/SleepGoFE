@@ -14,12 +14,13 @@ h1 {
 
 h2 {
   margin-top: 14px;
-  margin-left: auto;
   font-size: 20px;
 }
 
 span {
   font-size: 15px;
-  margin-left: auto;
 }
 
+.search-bar-wrapper {
+  margin-left: auto;
+}

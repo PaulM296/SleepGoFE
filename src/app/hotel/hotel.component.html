@@ -9,7 +9,9 @@
         <span *ngIf="gridColumns === 4">Three Columns</span>
         <span *ngIf="gridColumns === 3">Four Columns</span>
       </button>
-      <app-search-bar (searchedTextChanged)="onSearchTextEntered($event)"></app-search-bar>
+      <div class="search-bar-wrapper">
+        <app-search-bar (searchedTextChanged)="onSearchTextEntered($event)"></app-search-bar>
+      </div>
     </mat-toolbar>
     <div class="content">
       <div fxLayout="row wrap" fxLayoutGap="16px grid">
