@@ -4,13 +4,14 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {F} from "@angular/cdk/keycodes";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
+
 @Component({
   selector: 'app-hotel',
   templateUrl: './hotel.component.html',
   styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent implements OnInit {
-  
+
   hotels!: any[];
   searchForm: FormGroup = new FormGroup({
     search: new FormControl('')
@@ -44,8 +45,6 @@ export class HotelComponent implements OnInit {
 
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
-    console.log(this.searchText);
   }
-
 
 }

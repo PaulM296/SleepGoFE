@@ -12,9 +12,11 @@
   export class HeaderComponent implements OnInit{
 
     @ViewChild('sidenav') sidenav!: MatSidenav;
-    @Output() toggleSidenavForMe: EventEmitter<any> = new EventEmitter<any>();
-
+    @Output()
+    toggleSidenavForMe: EventEmitter<any> = new EventEmitter<any>();
+    
     private errorMessage!: string;
+
     constructor(private router: Router, private apiService: ApiService, private snackBar: MatSnackBar) {
     }
 
@@ -52,13 +54,9 @@
       return this.router.url === '/';
     }
 
-    // toggleSideNav() {
-    //   if (this.sidenav) {
-    //     this.sidenav.toggle();
-    //   }
-    // }
-
     toggleSideNav() {
       this.toggleSidenavForMe.emit();
       }
+
+
   }
