@@ -28,6 +28,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { SearchBarComponent } from "./search-bar/search-bar.component";
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -56,7 +57,8 @@ const routes = [
     UserAccountComponent,
     ConfirmationDialogComponent,
     SidenavComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,7 @@ const routes = [
     MatListModule,
     NgOptimizedImage,
     CdkListbox,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   exports: [
     RouterModule

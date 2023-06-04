@@ -133,6 +133,19 @@ export class ApiService {
     return this.http.get(`${this.backendUrl}/api/hotel/${hotelId}`, httpOptions);
   }
 
+  getAllHotels() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+      }),
+    };
+
+    return this.http.get(`${this.backendUrl}/api/hotel`, httpOptions);
+  }
+
+
+
   getReservationsByUsername(username: string, token: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -147,5 +160,7 @@ export class ApiService {
 
     return this.http.get(`${this.backendUrl}/api/reservations/${username}`, httpOptions);
   }
+
+
 
 }
