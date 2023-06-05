@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ApiService} from "../services/ApiService";
+import {Loader} from "@googlemaps/js-api-loader";
 
 @Component({
   selector: 'app-hotel-details',
@@ -23,6 +24,17 @@ export class HotelDetailsComponent implements OnInit {
         console.log("Incorrect mapping");
       }
     });
+    let loader = new Loader({
+      apiKey: 'AIzaSyBrsELle3cF-2gxMmpCCpsRyeNGDIq5Weg'
+    })
+
+    loader.load().then(() => {
+      const mapElement = document.getElementById("map") as HTMLElement;
+      new google.maps.Map(mapElement, {
+        center: { lat: 51.233334, lng: 6.783333 },
+        zoom: 13
+      });
+    });
   }
 
   getHotelDetails(id: number): void {
@@ -35,4 +47,6 @@ export class HotelDetailsComponent implements OnInit {
       }
     });
   }
+
+
 }
