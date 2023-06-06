@@ -161,6 +161,32 @@ export class ApiService {
     return this.http.get(`${this.backendUrl}/api/reservations/${username}`, httpOptions);
   }
 
+  // getAmenitiesByHotelId(hotelId: number) {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json',
+  //       'Authorization': 'Basic ' + btoa('proiect:parola1'),
+  //     }),
+  //     params: {
+  //       'hotelId': hotelId.toString()
+  //     }
+  //   };
+  //
+  //   return this.http.get(`${this.backendUrl}/api/amenities/getByHotelId`, httpOptions);
+  // }
 
+  getAmenitiesByHotelId(hotelId: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+      }),
+      params: {
+        'hotelId': hotelId.toString()
+      }
+    };
+
+    return this.http.get(`${this.backendUrl}/api/amenities/getByHotelId`, httpOptions);
+  }
 
 }

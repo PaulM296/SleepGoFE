@@ -4,6 +4,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {F} from "@angular/cdk/keycodes";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {Router} from "@angular/router";
+import {ReviewModel} from "../reviews/review.model";
 
 
 @Component({

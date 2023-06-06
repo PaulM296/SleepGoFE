@@ -1,8 +1,38 @@
 <div class="hotel-details-container">
   <div class="wrapper">
-    <div>works</div>
-    <div class="full" id="map">
-
-    </div>
+    <h1>{{ hotel?.hotelName }}</h1>
+    <p><strong>Country:</strong> {{ hotel?.country }}</p>
+    <p><strong>City:</strong> {{ hotel?.city }}</p>
+    <p>{{ hotel?.hotelDescription }}</p>
+    <p><strong>Amenities:</strong></p>
+    <ul>
+      <div *ngFor="let amenity of amenities">
+        <div *ngIf="amenity.bar">
+          <mat-icon> local_bar</mat-icon>
+          Bar
+        </div>
+        <div *ngIf="amenity.pool">
+          <mat-icon>pool</mat-icon>
+          Pool
+        </div>
+        <div *ngIf="amenity.fitness">
+          <mat-icon>fitness_center</mat-icon>
+          Fitness
+        </div>
+        <div *ngIf="amenity.restaurant">
+          <mat-icon> restaurant_menu</mat-icon>
+          Restaurant
+        </div>
+        <div *ngIf="amenity.wiFi">
+          <mat-icon>wifi</mat-icon>
+          Wi-Fi
+        </div>
+        <div *ngIf="amenity.roomService">
+          <mat-icon>room_service</mat-icon>
+          Room Service
+        </div>
+      </div>
+    </ul>
+    <div class="full" id="map"></div>
   </div>
 </div>
