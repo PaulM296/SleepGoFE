@@ -3,6 +3,10 @@
     <h1>{{ hotel?.hotelName }}</h1>
     <p><strong>Country:</strong> {{ hotel?.country }}</p>
     <p><strong>City:</strong> {{ hotel?.city }}</p>
+    <p><strong>Phone Number:</strong> {{ hotel?.phoneNumber }}</p>
+    <p><strong>Email:</strong> {{ hotel?.email }}</p>
+    <p><strong>Address:</strong> {{ hotel?.address }}</p>
+    <p><strong>Zip Code:</strong> {{ hotel?.zipCode }}</p>
     <p>{{ hotel?.hotelDescription }}</p>
     <p><strong>Amenities:</strong></p>
     <ul>
@@ -33,6 +37,10 @@
         </div>
       </div>
     </ul>
+    <h2>Reviews</h2>
+    <div *ngFor="let review of reviews">
+      <p><b>Review Text</b>: {{ review.reviewText }}</p>
+    </div>
     <div class="full" id="map"></div>
   </div>
 </div>
