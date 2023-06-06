@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { ApiService } from "../services/ApiService";
 import { Loader } from "@googlemaps/js-api-loader";
 
@@ -13,8 +13,9 @@ export class HotelDetailsComponent implements OnInit {
   hotel: any;
   amenities!: any[];
   reviews!: any[];
+  rooms!: any[];
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) { }
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -23,6 +24,7 @@ export class HotelDetailsComponent implements OnInit {
         this.hotelId = +idParam;
         this.getHotelDetails(this.hotelId);
         this.getAmenitiesByHotelId(this.hotelId);
+        this.getRoomsByHotelId(this.hotelId);
         this.getReviewsByHotelId(this.hotelId);
       } else {
         console.log("Incorrect mapping");
@@ -65,6 +67,18 @@ export class HotelDetailsComponent implements OnInit {
     });
   }
 
+  getRoomsByHotelId(hotelId: number): void {
+    this.apiService.getRoomsByHotelId(hotelId).subscribe({
+      next: (response: any[]) => {
+        this.rooms = response;
+        console.log('Rooms Fetched for hotelId:', hotelId);
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    });
+}
+
   getReviewsByHotelId(hotelId: number): void {
     this.apiService.getReviewsByHotelId(hotelId).subscribe({
       next: (response: any[]) => {
@@ -76,4 +90,15 @@ export class HotelDetailsComponent implements OnInit {
       }
     });
   }
+
+  addReview() {
+    // Redirect to the review creation page
+    this.router.navigate(['/']);
+  }
+
+  addReservation() {
+    // Redirect to the review creation page
+    this.router.navigate(['/']);
+  }
+
 }

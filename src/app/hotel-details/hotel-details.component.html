@@ -37,10 +37,23 @@
         </div>
       </div>
     </ul>
+    <h2>Rooms</h2>
+    <div *ngFor="let room of rooms">
+      <p><b>Room Type</b>: {{ room.roomType }}</p>
+      <p><b>Price</b>: {{ room.price }}</p>
+      <p><b>Availability</b>: {{ room.availability }}</p>
+      <p><b>Balcony</b>: {{ room.balcony }}</p>
+      <p><b>Air Conditioning</b>: {{ room.airConditioning }}</p>
+      <p><b>Kitchenette</b>: {{ room.kitchenette }}</p>
+      <p><b>Hairdryer</b>: {{ room.hairdryer }}</p>
+      <p><b>Tv</b>: {{ room.tv }}</p>
+    </div>
     <h2>Reviews</h2>
     <div *ngFor="let review of reviews">
-      <p><b>Review Text</b>: {{ review.reviewText }}</p>
+      <p><b>Review</b>: {{ review.reviewText }}</p>
     </div>
+    <button mat-raised-button color="primary" (click)="addReview()">Add Review</button>
+    <button mat-raised-button color="primary" (click)="addReservation()">Add Reservation</button>
     <div class="full" id="map"></div>
   </div>
 </div>
