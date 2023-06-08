@@ -30,6 +30,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { SearchBarComponent } from "./search-bar/search-bar.component";
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
+import { WriteReviewsComponent } from './write-reviews/write-reviews.component';
+import { WriteReservationsComponent } from './write-reservations/write-reservations.component';
 
 const routes = [
   {path: '', component: HomeComponent},
@@ -41,7 +43,9 @@ const routes = [
   {path: 'reviews', component: ReviewsComponent},
   {path: 'reservations', component: ReservationsComponent},
   {path: 'hotel/:id', component: HotelDetailsComponent},
-  {path: 'map', component: MapComponent}
+  {path: 'map', component: MapComponent},
+  {path: 'write-reviews', component: WriteReviewsComponent},
+  {path: 'write-reservations', component: WriteReservationsComponent}
 ];
 
 @NgModule({
@@ -62,7 +66,9 @@ const routes = [
     SidenavComponent,
     ReservationsComponent,
     SearchBarComponent,
-    HotelDetailsComponent
+    HotelDetailsComponent,
+    WriteReviewsComponent,
+    WriteReservationsComponent
   ],
   imports: [
     BrowserModule,
