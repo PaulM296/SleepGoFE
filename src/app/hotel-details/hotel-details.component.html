@@ -52,8 +52,12 @@
     <div *ngFor="let review of reviews">
       <p><b>Review</b>: {{ review.reviewText }}</p>
     </div>
-    <button mat-raised-button color="primary" (click)="addReview()">Add Review</button>
-    <button mat-raised-button color="primary" (click)="addReservation()">Add Reservation</button>
+    <button mat-raised-button color="primary" (click)="addReview()">
+      <mat-icon> add_comment</mat-icon>
+      Add Review
+    </button>
+    <button mat-raised-button color="primary" (click)="addReservation()">Make Reservation</button>
     <div class="full" id="map"></div>
   </div>
 </div>
+

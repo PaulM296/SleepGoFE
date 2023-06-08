@@ -119,12 +119,10 @@ export class HotelDetailsComponent implements OnInit {
   }
 
   addReview() {
-    // Redirect to the review creation page
     this.router.navigate(['/write-reviews']);
   }
 
   addReservation() {
-    // Redirect to the review creation page
     this.router.navigate(['/write-reservations']);
   }
 
