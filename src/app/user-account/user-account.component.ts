@@ -23,7 +23,6 @@ export class UserAccountComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private apiService: ApiService, private router: Router,
               private activatedRoute: ActivatedRoute, private snackBar: MatSnackBar, private dialog: MatDialog) {
     this.profileForm = this.formBuilder.group({
-      id: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -43,7 +42,6 @@ export class UserAccountComponent implements OnInit {
       .subscribe({
         next: (user: UserModel) => {
           this.profileForm.patchValue({
-            id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
