@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { UserModel } from "../user-account/user.model";
 import {ReviewModel} from "../reviews/review.model";
+import {ReservationsModel} from "../reservations/reservations.model";
 
 @Injectable({
 providedIn: 'root'
@@ -201,6 +202,18 @@ export class ApiService {
     };
 
     return this.http.post(`${this.backendUrl}/api/reviews`, review, httpOptions);
+  }
+
+  addReservation(reservation: ReservationsModel, token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa('proiect:parola1'),
+        'custom-token': token
+      })
+    };
+
+    return this.http.post(`${this.backendUrl}/api/reservations`, reservation, httpOptions);
   }
 
 }

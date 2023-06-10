@@ -6,6 +6,7 @@
     <mat-card-content class="content-container">
       <form class="form-container" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
         <div *ngFor="let reservation of reservations" class="reservations">
+          <p><b>Hotel Name</b>: {{ reservation.hotelName }}</p>
           <p><b>Check In Date</b>: {{ reservation.checkInDate }}</p>
           <p><b>Check Out Date</b>: {{ reservation.checkOutDate }}</p>
           <p><b>Price</b>: {{ reservation.price }}</p>

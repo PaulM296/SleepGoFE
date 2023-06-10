@@ -4,30 +4,26 @@
       <h1>Make Reservation</h1>
     </mat-card-header>
     <mat-card-content class="content-container">
-      <form class="form-container">
+      <form class="form-container" [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="form-field">
-          <mat-label>User ID</mat-label>
-          <input matInput formControlName="userId">
-        </mat-form-field>
-        <mat-form-field class="form-field">
-          <mat-label>Check In Date</mat-label>
+          <mat-label>Check In Date - YYYY/MM/DD</mat-label>
           <input matInput formControlName="checkInDate">
         </mat-form-field>
         <mat-form-field class="form-field">
-          <mat-label>Check Out Date</mat-label>
-          <input matInput formControlName="checkInDate">
+          <mat-label>Check Out Date - YYYY/MM/DD</mat-label>
+          <input matInput formControlName="checkOutDate">
         </mat-form-field>
         <mat-form-field class="form-field">
           <mat-label>Price</mat-label>
           <input matInput formControlName="price">
         </mat-form-field>
         <div class="button-container">
-          <a mat-raised-button color="primary" class="save-button">Add Reservation
+          <button mat-raised-button color="primary" type="submit" class="save-button" (click)="onSubmit()">Make Reservation
             <mat-icon>edit</mat-icon>
-          </a>
-          <a mat-raised-button color="warn" class="delete-button">Discard Reservation
+          </button>
+          <button mat-raised-button color="warn" type="button" class="clear-form" (click)="clearForm()">Clear form
             <mat-icon>delete_forever</mat-icon>
-          </a>
+          </button>
         </div>
       </form>
     </mat-card-content>

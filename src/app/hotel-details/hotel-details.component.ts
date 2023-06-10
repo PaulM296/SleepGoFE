@@ -109,8 +109,8 @@ export class HotelDetailsComponent implements OnInit {
     this.router.navigate(['/write-reviews', hotelId]);
   }
 
-  addReservation() {
-    this.router.navigate(['/write-reservations']);
+  addReservation(hotelId: number) {
+    this.router.navigate(['/write-reservations', this.hotelId]);
   }
 
 }
