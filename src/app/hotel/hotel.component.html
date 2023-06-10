@@ -22,7 +22,7 @@
                 <mat-card-header>
                   <mat-card-title>{{hotel.hotelName}}</mat-card-title>
                 </mat-card-header>
-                <img mat-card-image src="assets/images/Hotel_background_image2.jpg" (click)="navigateToHotelPage(hotel.hotelId)" class="hand-cursor">
+                <img mat-card-image [src]="hotel.imageUrl" (click)="navigateToHotelPage(hotel.hotelId)" class="hand-cursor">
                 <mat-card-content>
                   <p><strong>Country:</strong> {{ hotel.country }}</p>
                   <p><strong>City:</strong> {{ hotel.city }}</p>

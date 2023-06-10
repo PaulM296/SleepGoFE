@@ -28,14 +28,18 @@ export class HotelComponent implements OnInit {
 
   getAllHotels(): void {
     this.apiService.getAllHotels().subscribe({
-      next: (response: Object) => {
-        this.hotels = response as any[];
+      next: (response: any) => {
+        this.hotels = response.map((hotel: any) => ({
+          ...hotel,
+          imageUrl: `assets/images/hotel-images/${hotel.hotelId}.png`,
+        }));
       },
       error: (error: any) => {
         console.log(error);
-      }
+      },
     });
   }
+
 
   gridColumns = 3;
 
