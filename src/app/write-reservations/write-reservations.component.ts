@@ -59,6 +59,7 @@ export class WriteReservationsComponent implements OnInit {
   }
   clearForm() {
     this.reservationForm.reset();
+    this.reservationForm.patchValue({ hotelId: this.hotelId });
     this.snackBar.open('Reservation discarded successfully', 'Close', { duration: 3000 });
   }
 }

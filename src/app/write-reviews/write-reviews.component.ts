@@ -51,6 +51,7 @@ export class WriteReviewsComponent implements OnInit {
 
   clearForm() {
     this.reviewForm.reset();
+    this.reviewForm.patchValue({ hotelId: this.hotelId });
     this.snackBar.open('Review discarded successfully', 'Close', { duration: 3000 });
   }
 
