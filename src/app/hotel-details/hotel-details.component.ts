@@ -46,19 +46,6 @@ export class HotelDetailsComponent implements OnInit {
     });
   }
 
-  // initializeMap(): void {
-  //   let loader = new Loader({
-  //     apiKey: 'AIzaSyBrsELle3cF-2gxMmpCCpsRyeNGDIq5Weg'
-  //   });
-  //
-  //   loader.load().then(() => {
-  //     const mapElement = document.getElementById("map") as HTMLElement;
-  //     new google.maps.Map(mapElement, {
-  //       center: { lat: this.hotel.latitude, lng: this.hotel.longitude },
-  //       zoom: 14
-  //     });
-  //   });
-  // }
   initializeMap(): void {
     let loader = new Loader({
       apiKey: 'AIzaSyBrsELle3cF-2gxMmpCCpsRyeNGDIq5Weg'
@@ -118,8 +105,8 @@ export class HotelDetailsComponent implements OnInit {
     });
   }
 
-  addReview() {
-    this.router.navigate(['/write-reviews']);
+  addReview(hotelId: number) {
+    this.router.navigate(['/write-reviews', hotelId]);
   }
 
   addReservation() {

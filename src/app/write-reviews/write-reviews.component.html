@@ -4,26 +4,18 @@
       <h1>Write Review</h1>
     </mat-card-header>
     <mat-card-content class="content-container">
-      <form class="form-container">
-        <mat-form-field class="form-field">
-          <mat-label>User ID</mat-label>
-          <input matInput formControlName="userId">
-        </mat-form-field>
-        <mat-form-field class="form-field">
-          <mat-label>Hotel ID</mat-label>
-          <input matInput formControlName="hotelId">
-        </mat-form-field>
+      <form class="form-container" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="form-field">
           <mat-label>Review Text</mat-label>
           <input matInput formControlName="reviewText">
         </mat-form-field>
         <div class="button-container">
-          <a mat-raised-button color="primary" class="save-button">Post Review
+          <button mat-raised-button color="primary" type="submit" class="save-button">Post Review
             <mat-icon>edit</mat-icon>
-          </a>
-          <a mat-raised-button color="warn" class="delete-button">Discard Review
+          </button>
+          <button mat-raised-button color="warn" type="button" (click)="clearForm()" class="clear-form">Clear Form
             <mat-icon>delete_forever</mat-icon>
-          </a>
+          </button>
         </div>
       </form>
     </mat-card-content>

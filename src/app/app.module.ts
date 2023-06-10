@@ -44,7 +44,7 @@ const routes = [
   {path: 'reservations', component: ReservationsComponent},
   {path: 'hotel/:id', component: HotelDetailsComponent},
   {path: 'map', component: MapComponent},
-  {path: 'write-reviews', component: WriteReviewsComponent},
+  {path: 'write-reviews/:id', component: WriteReviewsComponent},
   {path: 'write-reservations', component: WriteReservationsComponent}
 ];
 
