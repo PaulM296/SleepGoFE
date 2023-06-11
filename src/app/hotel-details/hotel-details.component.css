@@ -11,3 +11,61 @@
 h1 {
   font-weight: bold;
 }
+
+.amenities-container {
+  display: flex;
+}
+
+.amenity {
+  margin-right: 20px;
+}
+
+.room-details-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.room-details-table,
+.room-details-table {
+  padding: 10px;
+}
+
+.room-details-table {
+  background-color: #f2f2f2;
+}
+
+.room-details-table {
+  text-align: center;
+}
+
+.reviews-container {
+  margin-bottom: 20px;
+}
+
+.review-item {
+  margin-bottom: 10px;
+}
+
+.review-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.location-separator {
+  margin: 0 10px;
+}
+
+.address-info {
+  display: flex;
+  align-items: center;
+}
+
+.address-separator {
+  margin: 0 10px;
+}

@@ -1,56 +1,81 @@
 <div class="hotel-details-container">
   <div class="wrapper">
     <h1>{{ hotel?.hotelName }}</h1>
-    <p><strong>Country:</strong> {{ hotel?.country }}</p>
-    <p><strong>City:</strong> {{ hotel?.city }}</p>
-    <p><strong>Phone Number:</strong> {{ hotel?.phoneNumber }}</p>
+    <div class="location-info">
+      <p><strong>Country:</strong> {{ hotel?.country }}</p>
+      <p class="location-separator"></p>
+      <p><strong>City:</strong> {{ hotel?.city }}</p>
+    </div>
+    <div class="address-info">
+      <p><strong>Address:</strong> {{ hotel?.address }}</p>
+      <p class="address-separator"></p>
+      <p><strong>Zip Code:</strong> {{ hotel?.zipCode }}</p>
+    </div>
     <p><strong>Email:</strong> {{ hotel?.email }}</p>
-    <p><strong>Address:</strong> {{ hotel?.address }}</p>
-    <p><strong>Zip Code:</strong> {{ hotel?.zipCode }}</p>
+    <p><strong>Phone Number:</strong> {{ hotel?.phoneNumber }}</p>
     <p>{{ hotel?.hotelDescription }}</p>
-    <p><strong>Amenities:</strong></p>
-    <ul>
-      <div *ngFor="let amenity of amenities">
-        <div *ngIf="amenity.bar">
+    <h2>Rooms</h2>
+    <table class="room-details-table">
+      <thead>
+      <tr>
+        <th>Room Type</th>
+        <th>Price</th>
+        <th>Availability</th>
+        <th>Balcony</th>
+        <th>Air Conditioning</th>
+        <th>Kitchenette</th>
+        <th>Hairdryer</th>
+        <th>TV</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let room of rooms">
+        <td>{{ room.roomType }}</td>
+        <td>{{ room.price }}</td>
+        <td><mat-icon *ngIf="room.availability">check</mat-icon><mat-icon *ngIf="!room.availability">close</mat-icon></td>
+        <td><mat-icon *ngIf="room.balcony">check</mat-icon><mat-icon *ngIf="!room.balcony">close</mat-icon></td>
+        <td><mat-icon *ngIf="room.airConditioning">check</mat-icon><mat-icon *ngIf="!room.airConditioning">close</mat-icon></td>
+        <td><mat-icon *ngIf="room.kitchenette">check</mat-icon><mat-icon *ngIf="!room.kitchenette">close</mat-icon></td>
+        <td><mat-icon *ngIf="room.hairdryer">check</mat-icon><mat-icon *ngIf="!room.hairdryer">close</mat-icon></td>
+        <td><mat-icon *ngIf="room.tv">check</mat-icon><mat-icon *ngIf="!room.tv">close</mat-icon></td>
+      </tr>
+      </tbody>
+    </table>
+    <h2>Amenities:</h2>
+    <div>
+      <div class="amenities-container" *ngFor="let amenity of amenities">
+        <span class="amenity" *ngIf="amenity.bar">
           <mat-icon> local_bar</mat-icon>
           Bar
-        </div>
-        <div *ngIf="amenity.pool">
+        </span>
+        <span class="amenity" *ngIf="amenity.pool">
           <mat-icon>pool</mat-icon>
           Pool
-        </div>
-        <div *ngIf="amenity.fitness">
+        </span>
+        <span class="amenity" *ngIf="amenity.fitness">
           <mat-icon>fitness_center</mat-icon>
           Fitness
-        </div>
-        <div *ngIf="amenity.restaurant">
+        </span>
+        <span class="amenity" *ngIf="amenity.restaurant">
           <mat-icon> restaurant_menu</mat-icon>
           Restaurant
-        </div>
-        <div *ngIf="amenity.wiFi">
+        </span>
+        <span class="amenity" *ngIf="amenity.wiFi">
           <mat-icon>wifi</mat-icon>
           Wi-Fi
-        </div>
-        <div *ngIf="amenity.roomService">
+        </span>
+        <span class="amenity" *ngIf="amenity.roomService">
           <mat-icon>room_service</mat-icon>
           Room Service
-        </div>
+        </span>
       </div>
-    </ul>
-    <h2>Rooms</h2>
-    <div *ngFor="let room of rooms">
-      <p><b>Room Type</b>: {{ room.roomType }}</p>
-      <p><b>Price</b>: {{ room.price }}</p>
-      <p><b>Availability</b>: {{ room.availability }}</p>
-      <p><b>Balcony</b>: {{ room.balcony }}</p>
-      <p><b>Air Conditioning</b>: {{ room.airConditioning }}</p>
-      <p><b>Kitchenette</b>: {{ room.kitchenette }}</p>
-      <p><b>Hairdryer</b>: {{ room.hairdryer }}</p>
-      <p><b>Tv</b>: {{ room.tv }}</p>
     </div>
     <h2>Reviews</h2>
-    <div *ngFor="let review of reviews">
-      <p><b>Review</b>: {{ review.reviewText }}</p>
+    <div class="reviews-container">
+      <div *ngFor="let review of reviews" class="review-item">
+        <p>{{ review.reviewText }}</p>
+        <hr class="review-separator">
+      </div>
     </div>
     <button mat-raised-button color="primary" (click)="addReview(hotel.hotelId)">
       <mat-icon>add_comment</mat-icon>
@@ -58,7 +83,8 @@
     </button>
     <button mat-raised-button color="primary" (click)="addReservation(hotel.hotelId)">
       <mat-icon>event</mat-icon>
-      Make Reservation</button>
+      Make Reservation
+    </button>
     <div class="full" id="map"></div>
   </div>
 </div>
