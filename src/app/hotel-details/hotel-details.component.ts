@@ -59,7 +59,6 @@ export class HotelDetailsComponent implements OnInit {
       };
       const map = new google.maps.Map(mapElement, mapOptions);
 
-      // Add marker
       const markerOptions: google.maps.MarkerOptions = {
         position: { lat: this.hotel.latitude, lng: this.hotel.longitude },
         map: map,
