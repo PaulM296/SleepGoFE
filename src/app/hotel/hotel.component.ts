@@ -50,7 +50,7 @@ export class HotelComponent implements OnInit {
   searchText: string = '';
 
   onSearchTextEntered(searchValue: string) {
-    this.searchText = searchValue.toLowerCase();
+    this.searchText = searchValue;
   }
 
   navigateToHotelPage(hotelId: number) {

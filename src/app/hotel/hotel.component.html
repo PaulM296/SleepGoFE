@@ -16,13 +16,17 @@
     <div class="content">
       <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <ng-container *ngFor="let hotel of hotels">
-          <div [fxFlex]="(100 / gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngIf="searchText === '' || hotel.hotelName.toLowerCase().includes(searchText.toLowerCase()) || hotel.country.toLowerCase().includes(searchText.toLowerCase()) || hotel.city.toLowerCase().includes(searchText.toLowerCase())">
+          <div [fxFlex]="(100 / gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngIf="searchText === '' ||
+          hotel.hotelName.toLowerCase().includes(searchText.toLowerCase()) || hotel.country.toLowerCase().includes(searchText.toLowerCase()) ||
+          hotel.city.toLowerCase().includes(searchText.toLowerCase())">
             <div class="hotel-cards">
               <mat-card class="mat-elevation-z4">
                 <mat-card-header>
                   <mat-card-title>{{hotel.hotelName}}</mat-card-title>
                 </mat-card-header>
-                <img mat-card-image [src]="hotel.imageUrl" (click)="navigateToHotelPage(hotel.hotelId)" class="hand-cursor">
+                <div class="image-container">
+                  <img mat-card-image [src]="hotel.imageUrl" (click)="navigateToHotelPage(hotel.hotelId)" class="hand-cursor">
+                </div>
                 <mat-card-content>
                   <p><strong>Country:</strong> {{ hotel.country }}</p>
                   <p><strong>City:</strong> {{ hotel.city }}</p>
